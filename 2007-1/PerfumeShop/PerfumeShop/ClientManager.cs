@@ -45,7 +45,7 @@ namespace PerfumeShop
 
             sb.AppendLine("All clients: ");
             
-            foreach (var client in clients)
+            foreach (var client in allClients)
             {
                 sb.AppendLine(client.ToString());
             }
