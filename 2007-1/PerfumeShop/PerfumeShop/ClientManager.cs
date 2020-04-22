@@ -42,12 +42,14 @@ namespace PerfumeShop
             {
                 sb.AppendLine("No clients added.");
             }
-
-            sb.AppendLine("All clients: ");
-            
-            foreach (var client in clients)
+            else
             {
-                sb.AppendLine(client.ToString());
+                sb.AppendLine("All clients: ");
+            
+                foreach (var client in clients)
+                {
+                    sb.AppendLine(client.ToString());
+                }
             }
 
             return sb.ToString().Trim();
@@ -66,10 +68,12 @@ namespace PerfumeShop
             {
                 sb.AppendLine("No clients found.");
             }
-
-            foreach (var client in clientsFromPlovdivWithCosmeticsPromo)
+            else
             {
-                sb.AppendLine(client.ToString());
+                foreach (var client in clientsFromPlovdivWithCosmeticsPromo)
+                {
+                    sb.AppendLine(client.ToString());
+                }
             }
 
             return sb.ToString().Trim();
