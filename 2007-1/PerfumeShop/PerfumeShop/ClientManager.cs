@@ -42,8 +42,6 @@ namespace PerfumeShop
             {
                 sb.AppendLine("No clients added.");
             }
-
-            sb.AppendLine("All clients: ");
             
             foreach (var client in allClients)
             {
