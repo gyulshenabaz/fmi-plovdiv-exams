@@ -36,7 +36,9 @@ namespace PerfumeShop
         {
             StringBuilder sb = new StringBuilder();
 
-            var allClients = clients.OrderBy(c => c.Name);
+            var allClients = clients
+                .OrderBy(c => c.Name)
+                .ToList();
 
             if (!allClients.Any())
             {
@@ -46,7 +48,7 @@ namespace PerfumeShop
             {
                 sb.AppendLine("All clients: ");
             
-                foreach (var client in clients)
+                foreach (var client in allClients)
                 {
                     sb.AppendLine(client.ToString());
                 }
@@ -62,7 +64,8 @@ namespace PerfumeShop
             var clientsFromPlovdivWithCosmeticsPromo = clients
                 .Where(c => c.Town == "Пловдив" && c.CategoryNumber == "1")
                 .OrderBy(c => c.DiscountPercent)
-                .ThenByDescending(c => c.Name);
+                .ThenByDescending(c => c.Name)
+                .ToList();
 
             if (!clientsFromPlovdivWithCosmeticsPromo.Any())
             {
